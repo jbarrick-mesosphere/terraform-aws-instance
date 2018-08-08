@@ -31,21 +31,21 @@ module "dcos-master-instance" {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| ami | Specify the AMI to be used. | string | - | yes |
-| associate_public_ip_address | The instance profile to be used for these instances | string | `true` | no |
-| cluster_name | Specify the cluster name all resources get named and tagged with | string | - | yes |
+| ami | AMI to be used | string | - | yes |
+| associate_public_ip_address | Instance profile to be used for these instances | string | `true` | no |
+| cluster_name | Cluster name all resources get named and tagged with | string | - | yes |
 | hostname_format | Format the hostname inputs are index+1, region, cluster_name | string | `%[3]s-instance%[1]d-%[2]s` | no |
-| iam_instance_profile | The instance profile to be used for these instances | string | `` | no |
-| instance_type | Specify the instance type | string | `m4.large` | no |
+| iam_instance_profile | Instance profile to be used for these instances | string | `` | no |
+| instance_type | Instance type | string | `m4.large` | no |
 | key_name | The SSH key to use for these instances. | string | - | yes |
-| num | How many instances should be created | string | - | yes |
-| region | Specify the region to be used | string | `` | no |
-| root_volume_size | Specify the root volume size | string | `40` | no |
-| root_volume_type | Specify the root volume type. Masters MUST have at least gp2 | string | `gp2` | no |
+| num | Number of instances to be created | string | - | yes |
+| region | Region to be used | string | `` | no |
+| root_volume_size | Root volume size | string | `40` | no |
+| root_volume_type | Root volume type. Masters MUST use at least gp2 | string | `gp2` | no |
 | security_group_ids | Firewall IDs to use for these instances | list | - | yes |
 | subnet_ids | Subnets to spawn the instances in. The module tries to distribute the instances | list | - | yes |
-| tags | Add special tags to the resources created by this module | map | `<map>` | no |
-| user_data | The user data to be used on these instances. E.g. cloud init | string | `` | no |
+| tags | Custom tags added to the resources created by this module | map | `<map>` | no |
+| user_data | User data to be used on these instances (cloud-init) | string | `` | no |
 
 ## Outputs
 

@@ -1,10 +1,10 @@
 variable "region" {
-  description = "Specify the region to be used"
+  description = "Region to be used"
   default     = ""
 }
 
 variable "cluster_name" {
-  description = "Specify the cluster name all resources get named and tagged with"
+  description = "Cluster name all resources get named and tagged with"
 }
 
 # variable "availability_zones" {
@@ -13,31 +13,31 @@ variable "cluster_name" {
 # }
 
 variable "tags" {
-  description = "Add special tags to the resources created by this module"
+  description = "Custom tags added to the resources created by this module"
   type        = "map"
   default     = {}
 }
 
 variable "ami" {
-  description = "Specify the AMI to be used."
+  description = "AMI to be used"
 }
 
 variable "num" {
-  description = "How many instances should be created"
+  description = "Number of instances to be created"
 }
 
 variable "instance_type" {
-  description = "Specify the instance type"
+  description = "Instance type"
   default     = "m4.large"
 }
 
 variable "root_volume_size" {
-  description = "Specify the root volume size"
+  description = "Root volume size"
   default     = "40"
 }
 
 variable "root_volume_type" {
-  description = "Specify the root volume type. Masters MUST have at least gp2"
+  description = "Root volume type. Masters MUST use at least gp2"
   default     = "gp2"
 }
 
@@ -52,17 +52,17 @@ variable "security_group_ids" {
 }
 
 variable "iam_instance_profile" {
-  description = "The instance profile to be used for these instances"
+  description = "Instance profile to be used for these instances"
   default     = ""
 }
 
 variable "associate_public_ip_address" {
-  description = "The instance profile to be used for these instances"
+  description = "Instance profile to be used for these instances"
   default     = true
 }
 
 variable "user_data" {
-  description = "The user data to be used on these instances. E.g. cloud init"
+  description = "User data to be used on these instances (cloud-init)"
   default     = ""
 }
 
